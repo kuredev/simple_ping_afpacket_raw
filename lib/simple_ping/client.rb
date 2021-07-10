@@ -90,7 +90,7 @@ module SimplePing
         dst_addr: @dst_ip_addr
       ).to_pack
 
-      trans_data = ether_header + ip_header + icmp.to_trans_data # ★
+      trans_data = ether_header + ip_header + icmp.to_trans_data
       bind_if(socket)
       socket.send(trans_data, 0)
       # Receive
